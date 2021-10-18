@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="HD.js"></script>
+</head>
+
+<body>
+    <script>
+        new HD((resolve, reject) => {
+                // resolve('go')
+                reject('no')
+            })
+            .then(res => {
+                console.log('res:', res);
+                return 'fuck'
+            }, err => {
+                console.log('err:', err);
+                return 'dan'
+            })
+            .then(res => {
+                console.log('res1:', res);
+            }, err => {
+                console.log('err1:', err);
+            })
+
+
+
+        // let p1 = new HD(resolve => {
+        //     resolve('g')
+        // })
+        // let p2 = new HD((resolve, reject) => {
+        //     reject('a')
+        // })
+        // let p3 = new HD(resolve => {
+        //     resolve('c')
+        // })
+        // HD.all([p1, p2, p3]).then(res => {
+        //     console.log(res);
+        // }, err => {
+        //     console.log(err);
+        // })
+
+
+
+        // let p1 = new HD(resolve => {
+        //     setTimeout(() => {
+        //         resolve('g')
+        //     }, 3000)
+        // })
+        // let p2 = new HD((resolve, reject) => {
+        //     setTimeout(() => {
+        //         reject('a')
+        //     }, 2000)
+        // })
+        // HD.race([p1, p2]).then(res => {
+        //     console.log(res);
+        // }, err => {
+        //     console.log(err);
+        // })
+
+
+        // let p = new HD((resolve, reject) => {
+        //         // resolve('成功')
+        //         setTimeout(() => {
+        //             reject('拒绝')
+        //         }, 1000)
+        //     }).then(value => {
+        //         return new HD((resolve, reject) => {
+        //             reject('kobe')
+        //         })
+        //     }, reason => {
+        //         return new HD((resolve, reject) => {
+        //             reject('james')
+        //         })
+        //     })
+        //     .then(value => {
+        //         console.log('fulfilled:', value);
+        //     }, reason => {
+        //         console.log('reject:', reason);
+        //     })
+        // console.log('gogogo');
+
+        // let promise = new HD((resolve, reject) => {
+        //     resolve('成功')
+        // })
+        // // let p = promise.then(value => p)
+        // HD.resolve('go').then(res => {
+        //     console.log(res);
+        // })
+
+        // let h = new HD((resolve, reject) => {
+        //     // resolve('成功')
+        //     reject('失败')
+        // })
+        // HD.resolve(h).then(res => {
+        //     console.log(res);
+        // }, err => {
+        //     console.log(err);
+        // })
+
+        // HD.reject('失败').then(null, reason => {
+        //     console.log(reason);
+        // })
+    </script>
+</body>
+
+</html>
